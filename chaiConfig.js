@@ -199,6 +199,14 @@ export const chaiClasses = {
         half: "50%",
         third: "33.33%",
       },
-      
+
+    flexcol: {
+      flexcol: "column" // This allows chai_flexcol (no dash) to work
+    },
+    
+    flexrow: {
+      flexrow: "row"
+    }
+
     
   };
