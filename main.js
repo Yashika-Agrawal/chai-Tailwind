@@ -1,51 +1,68 @@
-import { chaiClasses, chaiColors, chaiValues } from "./chaiConfig.js";
 
-const allElements=[...document.body.querySelectorAll("*")]
+import { chaiClasses, chaiColors, chaiValues } from "./chaiConfig.js";
+const allElements=[document.body, ...document.body.querySelectorAll("*")]
 
 allElements.forEach((ele) => {
     const classListArray=[...ele.classList]
     const filterChaiArray=classListArray.filter((cls)=>{
         return cls.startsWith("chai_")
     })
-    console.log(filterChaiArray, "filter")
     if (filterChaiArray.length === 0) return;
     filterChaiArray.forEach((chaiClass) => {
-        // remove "chai_"
         let classes = chaiClass.slice(5);
-        let [property, scaleOrColor] = classes.split("-");
+        let property, scaleOrColor;
 
+        if (classes.includes("-")) {
+            const firstDashIndex = classes.indexOf("-");
+            property = classes.slice(0, firstDashIndex);
+            scaleOrColor = classes.slice(firstDashIndex + 1);
+        } else {
+            property = classes;
+            scaleOrColor = null;
+        }
+    
         let cssProperty = chaiClasses[property];
         if (!cssProperty) return;
-
-        //no value class present 
+    
         if (!scaleOrColor) {
-            const value = chaiValues[property];
-            if (!value) return;
+            const valueGroup = chaiValues[property];
         
-            ele.style[cssProperty] = value;
+            if (valueGroup && valueGroup[property]) {
+                ele.style[cssProperty] = valueGroup[property];
+            }
+        
             return;
         }
-        // Color classes
-        if (property === "text" || property === "bg") {
+        // ✅ Custom arbitrary value support
+        if (scaleOrColor && scaleOrColor.startsWith("[") && scaleOrColor.endsWith("]")) {
+            const customValue = scaleOrColor.slice(1, -1); // remove [ ]
+
+            ele.style[cssProperty] = customValue;
+            return;
+        }
+        // ✅ 2. Colors (keep as is)
+        if (property === "text" || property === "bg" || property === "borderc") {
             const colorValue = chaiColors[scaleOrColor];
             if (!colorValue) return;
-
+    
             ele.style[cssProperty] = colorValue;
             return;
         }
-
-        // Keyword values (center, bold, etc)
-        if (scaleOrColor in chaiValues) {
-            ele.style[cssProperty] = chaiValues[scaleOrColor];
+    
+        // ✅ 3. NEW: Scoped values
+        const valueGroup = chaiValues[property];
+    
+        if (valueGroup && scaleOrColor in valueGroup) {
+            ele.style[cssProperty] = valueGroup[scaleOrColor];
             return;
         }
-
-        // 4. Spacing (fallback)
+    
+        // ✅ 4. Fallback → spacing numbers
         const scale = Number(scaleOrColor);
-        if (isNaN(scale)) return;
-
-        ele.style[cssProperty] = `${scale * 4}px`;
-                
-            });
+        if (!isNaN(scale)) {
+            ele.style[cssProperty] = `${scale * 4}px`;
+            return;
+        }
+    });
 });
 
