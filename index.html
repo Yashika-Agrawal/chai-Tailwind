@@ -1,176 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Chai CSS Demo</title>
+  <meta charset="UTF-8">
+  <title>Chai CSS — Kitchen Sink Demo</title>
 </head>
 
-<body class="chai_p-6 chai_bg-[#d0ad90]">
+<body class="chai_bg-[#fdf8f3] chai_p-6" style="margin: 0; min-height: 100vh; font-family: sans-serif;">
 
-  <!-- CONTAINER -->
-  <div class="chai_maxw-xl chai_mx-auto">
+  <div class="chai_display-block chai_maxw-xl chai_ml-auto chai_p-8" style="margin-right: auto;">
 
-    <!-- HEADER -->
-    <div class="chai_mb-6">
-      <h1 class="chai_fs-xl chai_fw-bold chai_text-[#6f4e37]">
-        ☕ Chai CSS
-      </h1>
-      <p class="chai_text-[#9c6644]">
-        Utility-first CSS built from scratch 🚀
-      </p>
-    </div>
+    <header class="chai_mb-12 chai_ta-center">
+      <span class="chai_bg-[#6f4e37] chai_text-white chai_pt-1 chai_pb-1 chai_pl-3 chai_pr-3 chai_rounded-full chai_fs-sm">
+        Framework Showcase ☕
+      </span>
+      <h1 class="chai_fs-xl chai_fw-bold chai_text-[#6f4e37] chai_mt-4">Chai CSS Capabilities</h1>
+    </header>
 
-    <!-- FONT SIZE -->
-    <div class="chai_mb-6">
-
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-3">Font Sizes</h2>
-    
-      <div class="chai_flex chai_flexwrap-wrap chai_gap-md">
-    
-        <div class="
-          chai_p-4 
-          chai_bg-white 
-          chai_shadow-md 
-          chai_rounded-lg 
-          chai_w-third
-        ">
-          <div class="chai_fs-sm">Small</div>
-          <div class="chai_text-[#9c6644]">chai_fs-sm</div>
+    <section class="chai_mb-12">
+      <h2 class="chai_fs-lg chai_fw-bold chai_mb-6 chai_text-[#6f4e37]">01. Color Palette</h2>
+      <div class="chai_flex chai_gap-4 chai_flexwrap-wrap">
+        <div class="chai_ta-center">
+          <div class="chai_bg-blue chai_w-16 chai_h-16 chai_rounded-md chai_mb-2 chai_shadow-sm"></div>
+          <span class="chai_fs-sm chai_text-gray">Blue</span>
         </div>
-    
-        <div class="
-          chai_p-4 
-          chai_bg-white 
-          chai_shadow-md 
-          chai_rounded-lg 
-          chai_w-third
-        ">
-          <div class="chai_fs-lg">Large</div>
-          <div class="chai_text-[#9c6644]">chai_fs-lg</div>
+        <div class="chai_ta-center">
+          <div class="chai_bg-red chai_w-16 chai_h-16 chai_rounded-md chai_mb-2 chai_shadow-sm"></div>
+          <span class="chai_fs-sm chai_text-gray">Red</span>
         </div>
-    
-        <div class="
-          chai_p-4 
-          chai_bg-white 
-          chai_shadow-md 
-          chai_rounded-lg 
-          chai_w-third
-        ">
-          <div class="chai_fs-xl">XL</div>
-          <div class="chai_text-[#9c6644]">chai_fs-xl</div>
+        <div class="chai_ta-center">
+          <div class="chai_bg-yellow chai_w-16 chai_h-16 chai_rounded-md chai_mb-2 chai_shadow-sm"></div>
+          <span class="chai_fs-sm chai_text-gray">Yellow</span>
         </div>
-    
+        <div class="chai_ta-center">
+          <div class="chai_bg-black chai_w-16 chai_h-16 chai_rounded-md chai_mb-2 chai_shadow-sm"></div>
+          <span class="chai_fs-sm chai_text-gray">Black</span>
+        </div>
+        <div class="chai_ta-center">
+          <div class="chai_bg-[#6f4e37] chai_w-16 chai_h-16 chai_rounded-md chai_mb-2 chai_shadow-sm"></div>
+          <span class="chai_fs-sm chai_text-gray">Chai</span>
+        </div>
       </div>
-    
-    </div>
+    </section>
 
-    <!-- COLORS -->
-    <div class="chai_mb-6">
-
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-3">Colors</h2>
-    
-      <div class="chai_flex chai_gap-md chai_flexwrap-wrap">
-    
-        <div class="chai_p-4 chai_bg-blue chai_text-white chai_rounded-lg chai_w-third">
-          bg-blue
-        </div>
-    
-        <div class="chai_p-4 chai_bg-red chai_text-white chai_rounded-lg chai_w-third">
-          bg-red
-        </div>
-    
-        <div class="chai_p-4 chai_bg-[#6f4e37] chai_text-white chai_rounded-lg chai_w-third">
-          chai color
-        </div>
-    
+    <section class="chai_mb-12">
+      <h2 class="chai_fs-lg chai_fw-bold chai_mb-4 chai_text-[#6f4e37]">02. Spacing Scale (n * 4px)</h2>
+      <div class="chai_flex chai_flexcol chai_gap-2">
+        <div class="chai_bg-[#6f4e37] chai_h-4 chai_w-4 chai_rounded-sm"></div>
+        <div class="chai_bg-[#6f4e37] chai_h-4 chai_w-8 chai_rounded-sm"></div>
+        <div class="chai_bg-[#6f4e37] chai_h-4 chai_w-16 chai_rounded-sm"></div>
+        <div class="chai_bg-[#6f4e37] chai_h-4 chai_w-32 chai_rounded-sm"></div>
+        <p class="chai_fs-sm chai_text-gray chai_mt-2">Demonstrating widths: 16px, 32px, 64px, 128px</p>
       </div>
-    
-    </div>
-<!-- SHADOW SECTION -->
-<div class="chai_mb-6">
+    </section>
 
-  <h2 class="chai_fs-lg chai_fw-bold chai_mb-3">Shadows</h2>
+    <section class="chai_mb-12">
+      <h2 class="chai_fs-lg chai_fw-bold chai_mb-6 chai_text-[#6f4e37]">03. Elevation & Shapes</h2>
+      <div class="chai_flex chai_gap-6">
+        <div class="chai_bg-white chai_p-8 chai_shadow-sm chai_rounded-sm chai_flex-1 chai_ta-center">
+          Shadow SM / Round SM
+        </div>
+        <div class="chai_bg-white chai_p-8 chai_shadow-md chai_rounded-md chai_flex-1 chai_ta-center">
+          Shadow MD / Round MD
+        </div>
+        <div class="chai_bg-white chai_p-8 chai_shadow-lg chai_rounded-lg chai_flex-1 chai_ta-center">
+          Shadow LG / Round LG
+        </div>
+      </div>
+    </section>
 
-  <div class="chai_flex chai_gap-md chai_flexwrap-wrap">
-
-    <div class="chai_p-4 chai_bg-white chai_shadow-sm chai_rounded-lg chai_w-third">
-      shadow-sm
-    </div>
-
-    <div class="chai_p-4 chai_bg-white chai_shadow-md chai_rounded-lg chai_w-third">
-      shadow-md
-    </div>
-
-    <div class="chai_p-4 chai_bg-white chai_shadow-lg chai_rounded-lg chai_w-third">
-      shadow-lg
-    </div>
+    <section class="chai_mb-12">
+      <h2 class="chai_fs-lg chai_fw-bold chai_mb-4 chai_text-[#6f4e37]">04. Interaction & Arbitrary</h2>
+      <div class="chai_flex chai_gap-4">
+        <button class="chai_p-4 chai_bg-[#6f4e37] chai_text-white chai_rounded-md chai_fw-bold chai_shadow-md">
+          Chai Button ☕
+        </button>
+        <button class="chai_p-4 chai_bg-white chai_text-[#6f4e37] chai_border-[2px] chai_borderc-[#6f4e37] chai_rounded-[12px]">
+          Secondary Outline
+        </button>
+      </div>
+    </section>
 
   </div>
 
-</div>
-
-    <!-- BORDER RADIUS -->
-    <div class="chai_mb-6">
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-2">Border Radius</h2>
-
-      <div class="chai_flex chai_gap-md">
-        <div class="chai_p-4 chai_bg-gray chai_rounded-sm">
-          rounded-sm
-        </div>
-
-        <div class="chai_p-4 chai_bg-gray chai_rounded-lg">
-          rounded-lg
-        </div>
-
-        <div class="chai_p-4 chai_bg-black chai_text-white chai_rounded-full">
-          rounded-full
-        </div>
-      </div>
-    </div>
-
-    <!-- WIDTH -->
-    <div class="chai_mb-6">
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-2">Width</h2>
-
-      <div class="chai_flex chai_gap-md chai_flexwrap-wrap">
-
-        <div class="chai_p-4 chai_bg-gray chai_w-third">
-          w-full
-        </div>
-      
-        <div class="chai_p-4 chai_bg-gray chai_w-third">
-          w-half
-        </div>
-      
-      </div>
-    </div>
-
-    <!-- SPACING -->
-    <div class="chai_mb-6">
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-2">Spacing</h2>
-
-      <div class="chai_flex chai_gap-md">
-        <div class="chai_p-2 chai_bg-white chai_rounded-md">p-2</div>
-        <div class="chai_p-4 chai_bg-white chai_rounded-md">p-4</div>
-        <div class="chai_p-6 chai_bg-white chai_rounded-md">p-6</div>
-      </div>
-    </div>
-
-    <!-- BUTTON -->
-    <div class="chai_mb-6">
-      <h2 class="chai_fs-lg chai_fw-bold chai_mb-2">Button</h2>
-
-      <button class="
-        chai_p-3
-        chai_bg-[#6f4e37]
-        chai_text-white
-        chai_rounded-md
-        chai_shadow-md
-      ">
-        Click Me ☕
-      </button>
-    </div>
-
-  </div>
   <script type="module" src="main.js"></script>
 </body>
 </html>

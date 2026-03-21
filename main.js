@@ -17,7 +17,7 @@ allElements.forEach((ele) => {
             property = classes.slice(0, firstDashIndex);
             scaleOrColor = classes.slice(firstDashIndex + 1);
         } else {
-            property = classes;
+            property = classes; //for chai_flex
             scaleOrColor = null;
         }
     
