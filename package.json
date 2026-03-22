@@ -1,10 +1,12 @@
 {
   "name": "brew-tailwind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JS-powered utility-first CSS engine brewed with Chai.",
   "main": "src/index.js",
   "type": "module",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +15,12 @@
     "url": "git+https://github.com/Yashika-Agrawal/chai-Tailwind.git"
   },
   "author": "Yashika Agrawal",
-  "keywords": ["css", "tailwind", "chai", "utility-first"],
+  "keywords": [
+    "css",
+    "tailwind",
+    "chai",
+    "utility-first"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Yashika-Agrawal/chai-Tailwind/issues"
