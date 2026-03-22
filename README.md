@@ -1,149 +1,162 @@
-# ☕ Chai CSS
+# ☕ brew-tailwind (Chai CSS)
 
-A lightweight **utility-first CSS engine** built from scratch using JavaScript.
-Inspired by Tailwind, but brewed your way.
+A lightweight, **JavaScript-powered utility-first CSS engine** brewed from scratch.
+No CSS files. No build tools. Just runtime magic ✨
+
+It scans your DOM, parses `chai_*` classes, and applies styles dynamically.
+
+[![npm version](https://img.shields.io/npm/v/brew-tailwind.svg)](https://www.npmjs.com/package/brew-tailwind)
 
 ---
 
-## 🚀 Why Chai CSS?
+## 🚀 Installation & Usage
 
-Ever wondered how Tailwind works under the hood?
+### 🟢 1. For Beginners (Plain HTML / No Build Tools)
 
-Chai CSS is a learning-first implementation of a utility CSS engine that lets you:
+If you're just getting started, use it directly via CDN:
 
-* Apply styles directly using class names
-* Build clean UIs without writing CSS files
-* Understand how utility-first frameworks actually work internally
+```html
+<script type="module">
+  import { initChai } from "https://unpkg.com/brew-tailwind/src/index.js";
+
+  initChai();
+</script>
+```
+
+---
+
+### 🔵 2. For Developers (React / Vite / Next.js)
+
+Install via npm:
+
+```bash
+npm install brew-tailwind
+```
+
+---
+
+#### Vanilla JS / Vite
+
+```js
+import { initChai } from "brew-tailwind";
+
+initChai();
+```
+
+---
+
+#### React Example
+
+```jsx
+import { useEffect } from "react";
+import { initChai } from "brew-tailwind";
+
+function App() {
+  useEffect(() => {
+    initChai();
+  }, []);
+
+  return (
+    <h1 className="chai_bg-[#964b00] chai_text-white chai_p-4 chai_rounded-lg">
+      Hello Chai ☕
+    </h1>
+  );
+}
+
+export default App;
+```
 
 ---
 
 ## ✨ Features
 
-* 🎯 Utility-first class system (`chai_p-4`, `chai_bg-blue`)
-* 🎨 Built-in color palette + custom color support
-* 🧠 Smart parser for dynamic class handling
-* ⚡ Arbitrary values support (like Tailwind)
-* 📦 Zero CSS file — everything powered by JS
+* ⚡ Utility-first class system (`chai_p-4`, `chai_bg-red`)
+* 🎨 Built-in + custom color support
+* 🧠 Smart runtime parser
+* 🔥 Arbitrary values (`chai_bg-[#964b00]`)
+* 📦 Zero CSS files required
 
 ---
 
-## 🔥 Example Usage
+## 🧱 Utility Reference
 
-```html
-<div class="chai_p-4 chai_bg-blue chai_text-white chai_rounded-lg chai_shadow-md">
-  Hello Chai ☕
-</div>
-```
-
----
-
-## 🎨 Custom Values (Power Feature)
-
-Use any custom value like this:
-
-```html
-<div class="chai_bg-[#6f4e37] chai_text-[#fff] chai_p-[20px]">
-  Custom Styled Box
-</div>
-```
+| Category      | Prefix          | Example             | CSS Equivalent          |
+| ------------- | --------------- | ------------------- | ----------------------- |
+| Background    | `chai_bg-`      | `chai_bg-red`       | `background-color: red` |
+| Text Color    | `chai_text-`    | `chai_text-white`   | `color: white`          |
+| Padding       | `chai_p-`       | `chai_p-4`          | `padding: 16px`         |
+| Margin        | `chai_m-`       | `chai_m-2`          | `margin: 8px`           |
+| Font Size     | `chai_fs-`      | `chai_fs-lg`        | `font-size: 18px`       |
+| Flex          | `chai_flex`     | `chai_flex`         | `display: flex`         |
+| Alignment     | `chai_items-`   | `chai_items-center` | `align-items: center`   |
+| Border Radius | `chai_rounded-` | `chai_rounded-full` | `border-radius: 9999px` |
+| Arbitrary     | `chai_*-[ ]`    | `chai_bg-[#964b00]` | Custom value support    |
 
 ---
 
-## 🧱 Available Utilities
+## 🎨 Built-in Colors
 
-### 📦 Spacing
+Includes basic palette + your signature brew ☕
 
-* `chai_p-4`, `chai_m-2`, `chai_gap-md`
-
-### 🎨 Colors
-
-* `chai_bg-red`, `chai_text-blue`
-* Custom: `chai_bg-[#ff5733]`
-
-### 🔤 Typography
-
-* `chai_fs-sm`, `chai_fs-lg`, `chai_fw-bold`
-
-### 📐 Layout
-
-* `chai_flex`, `chai_flexwrap-wrap`
-* `chai_justify-center`, `chai_items-center`
-
-### 🎭 Effects
-
-* `chai_shadow-sm`, `chai_shadow-md`, `chai_shadow-lg`
-
-### 🔲 Borders
-
-* `chai_border-thin`, `chai_borderc-red`
-* `chai_rounded-lg`, `chai_rounded-full`
+* `red`, `blue`, `green`, `yellow`
+* `black`, `white`, `gray`
+* Custom: `chai_bg-[#964b00]`
 
 ---
 
 ## ⚙️ How It Works
 
-1. Scans DOM for classes starting with `chai_`
-2. Parses class into:
-
-   * property (`bg`, `p`, `fs`)
-   * value (`blue`, `4`, `lg`)
-3. Maps it using config (`chaiConfig.js`)
-4. Applies styles dynamically via JS
+1. 🔍 **Scan** → Finds all `chai_*` classes in the DOM
+2. 🧠 **Parse** → Splits into property + value
+3. 🔗 **Map** → Converts to actual CSS
+4. ⚡ **Apply** → Injects styles dynamically
 
 ---
 
-## 🧠 Project Structure
+## 📁 Project Structure
 
 ```
-📁 project
- ├── index.html
- ├── main.js        // core engine
- ├── chaiConfig.js  // utility mappings
+brew-tailwind/
+├── src/
+│   ├── index.js        # Core engine
+│   ├── chaiConfig.js   # Utility mappings
+├── demo/               # Example usage
+├── README.md
 ```
 
 ---
 
-## 🛠️ Run Locally
+## 🚧 Roadmap
 
-```bash
-git clone <your-repo>
-cd project
-open index.html
-```
-
-Or use Live Server.
-
----
-
-## 🚧 Future Improvements
-
-* ⏳ Hover/focus variants (`hover:bg-blue`)
+* ⏳ Hover / focus variants (`hover:bg-blue`)
 * 📱 Responsive utilities (`md:p-4`)
-* ⚡ JIT-like dynamic updates
-* 🎯 Better class parsing engine
-* 🎨 Theme customization support
+* ⚡ MutationObserver (auto updates)
+* 🎨 Theme system
+* 🧪 Better parser optimization
 
 ---
 
-## 🤯 What I Learned
+## 🧠 What This Project Shows
 
 * DOM traversal & manipulation
-* Building a CSS parser from scratch
-* Utility-first design thinking
-* How frameworks like Tailwind work internally
+* Building a utility CSS engine from scratch
+* Understanding Tailwind’s internal concepts
+* Designing scalable class systems
 
 ---
 
 ## 💡 Inspiration
 
-Inspired by Tailwind CSS — but built from scratch to learn deeply.
+Inspired by Tailwind CSS — but built from scratch to deeply understand how it works.
 
 ---
 
 ## ☕ Final Thought
 
-This isn’t just a project — it’s a step toward understanding how real-world frameworks are built.
+This isn’t just a project — it’s a step toward building your own frameworks.
+
+If you liked this, drop a ⭐ and keep brewing 🔥
 
 ---
 
-If you like this, give it a ⭐ and maybe brew your own framework next 😉
+### 👩‍💻 Built with ❤️ by Yashika Agrawal
